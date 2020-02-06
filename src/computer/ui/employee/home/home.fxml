@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootSPane" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="computer.ui.employee.home.homeController">
+   <children>
+      <AnchorPane fx:id="rootPane" minHeight="490.0" minWidth="700.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@home.css">
+         <children>
+            <AnchorPane fx:id="bodyBalanceSheet" layoutY="89.0" prefHeight="580.0" prefWidth="1200.0" visible="false" />
+            <AnchorPane fx:id="bodyBill" layoutY="89.0" prefHeight="580.0" prefWidth="1200.0" visible="false" />
+            <AnchorPane fx:id="bodyCustomer" layoutY="89.0" prefHeight="700.0" prefWidth="1200.0" visible="false" AnchorPane.bottomAnchor="-89.0">
+               <children>
+                  <ImageView fitHeight="732.0" fitWidth="574.0" layoutX="481.0" layoutY="-3.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/44817-tattoo-wiring-diagram-electrical-printed-circuit-electronics.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="AllCustomersTable" focusTraversable="false" layoutX="264.0" layoutY="128.0" prefHeight="421.0" prefWidth="750.0" stylesheets="@home.css">
+                    <columns>
+                        <TableColumn fx:id="AllCustomersNumber" prefWidth="59.0" text="N" />
+                      <TableColumn fx:id="AllCustomersNames" prefWidth="190.0" text="First and Last names" />
+                      <TableColumn fx:id="AllCustomersGender" minWidth="0.0" prefWidth="82.0" text="Gender" />
+                        <TableColumn fx:id="AllCustomersNumber" prefWidth="128.0" text="Phone number" />
+                        <TableColumn fx:id="AllCustomersEmail" prefWidth="138.0" text="Email" />
+                        <TableColumn fx:id="AllCustomersAddress" prefWidth="132.0" text="Address" />
+                    </columns>
+                  </TableView>
+                  <Accordion layoutY="188.0" prefHeight="394.0" prefWidth="264.0">
+                    <panes>
+                      <TitledPane animated="false" text="Customer's Bills">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="untitled 2">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="untitled 3">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <Label fx:id="countCustomer" layoutX="265.0" layoutY="554.0" text="27 Customers have register" textFill="#127500">
+                     <font>
+                        <Font name="Tahoma" size="13.0" />
+                     </font></Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="189.0" layoutY="-2.0" stroke="#464646" strokeType="INSIDE" strokeWidth="0.0" width="264.0">
+                     <fill>
+                        <LinearGradient endX="0.45714285714285713" endY="0.02857142857142857" startX="0.4714285714285715" startY="1.0">
+                           <stops>
+                              <Stop color="#80808000" />
+                              <Stop color="GREY" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="163.0" prefHeight="19.0" prefWidth="218.0" text="EDIMO Songue" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="156.0" fitWidth="145.0" layoutX="43.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../imgPerson/icons8_Contacts_96px.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="464.0" layoutY="86.0" prefHeight="30.0" prefWidth="350.0" promptText="Search by name" style="-fx-background-radius: 0;">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="464.0" layoutY="69.0" text="Customer no found" textFill="#db5300" />
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="1024.0" layoutY="128.0" onAction="#addCustPane" prefHeight="35.0" prefWidth="122.0" ripplerFill="#7eff7c" style="-fx-background-radius: 0;" stylesheets="@home.css" text="ADD" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Add_User_Male_32px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="btnAddCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="1024.0" layoutY="173.0" prefHeight="35.0" prefWidth="122.0" ripplerFill="#ffb57d" style="-fx-background-radius: 0;" stylesheets="@home.css" text="EDIT" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Change_User_32px_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btnEditCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="1024.0" layoutY="218.0" prefHeight="35.0" prefWidth="122.0" ripplerFill="#ff7d7d" style="-fx-background-radius: 0;" stylesheets="@home.css" text="DELETE" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Denied_32px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="btnDelCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="1024.0" layoutY="263.0" prefHeight="35.0" prefWidth="122.0" ripplerFill="#867dff" style="-fx-background-radius: 0;" stylesheets="@home.css" text="PRINT" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Print_32px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="btnPrintCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bodyArticles" layoutY="89.0" prefHeight="580.0" prefWidth="1200.0" visible="false">
+               <children>
+                  <TableView fx:id="AllArticlesTable" layoutX="238.0" layoutY="123.0" prefHeight="421.0" prefWidth="671.0" AnchorPane.leftAnchor="238.0" AnchorPane.rightAnchor="291.0">
+                    <columns>
+                      <TableColumn fx:id="allSerialNumberCol" editable="false" prefWidth="120.0" text="Serial Number" />
+                      <TableColumn fx:id="allManufacturyNameCol" editable="false" prefWidth="138.0" text="Manafactury" />
+                        <TableColumn fx:id="allModelNameCol" editable="false" prefWidth="135.0" text="Model" />
+                        <TableColumn fx:id="allCategoryNameCol" editable="false" prefWidth="152.0" text="Category" />
+                        <TableColumn fx:id="allPriceCol" editable="false" prefWidth="128.0" text="Price" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="498.0" layoutY="5.0" stylesheets="@home.css" text="Article's list">
+                     <font>
+                        <Font name="Ebrima" size="30.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="385.0" layoutY="67.0" prefHeight="30.0" prefWidth="438.0" promptText="Search by model's name" style="-fx-background-radius: 0;" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="385.0">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="238.0" layoutY="106.0" text="*Right click up the cell for more opions" textFill="#ff4400" />
+                  <Label fx:id="countArticle" layoutX="238.0" layoutY="544.0" text="00 Customers have register" textFill="#127500">
+                     <font>
+                        <Font name="Tahoma" size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="919.0" layoutY="123.0" onAction="#addCustPane" prefHeight="35.0" prefWidth="122.0" ripplerFill="#7eff7c" style="-fx-background-radius: 0;" stylesheets="@home.css" text="ADD" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Add_User_Male_32px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="btnAddCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="919.0" layoutY="168.0" prefHeight="35.0" prefWidth="122.0" ripplerFill="#ffb57d" style="-fx-background-radius: 0;" stylesheets="@home.css" text="EDIT" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Change_User_32px_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btnEditCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="919.0" layoutY="213.0" prefHeight="35.0" prefWidth="122.0" ripplerFill="#ff7d7d" style="-fx-background-radius: 0;" stylesheets="@home.css" text="DELETE" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Denied_32px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="btnDelCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="15.0" layoutX="919.0" layoutY="258.0" prefHeight="35.0" prefWidth="122.0" ripplerFill="#867dff" style="-fx-background-radius: 0;" stylesheets="@home.css" text="PRINT" textFill="#545454">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Print_32px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="btnPrintCust" />
+                        <String fx:value="btnCust" />
+                     </styleClass>
+                  </JFXButton>
+                  <ImageView fitHeight="150.0" fitWidth="171.0" layoutX="47.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bodyHome" layoutY="89.0" prefHeight="580.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="656.0" fitWidth="644.0" layoutX="644.0" layoutY="-74.0" opacity="0.14" pickOnBounds="true" preserveRatio="true" rotate="180.0" smooth="false">
+                     <image>
+                        <Image url="@../../../images/back.png" />
+                     </image>
+                     <rotationAxis>
+                        <Point3D y="1.0" />
+                     </rotationAxis>
+                  </ImageView>
+                  <ImageView fitHeight="656.0" fitWidth="644.0" layoutX="-84.0" layoutY="-74.0" opacity="0.15" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@../../../images/back.png" />
+                     </image>
+                  </ImageView>
+                  <Pane fx:id="view1" layoutX="150.0" layoutY="58.0">
+                     <children>
+                        <Pane fx:id="paneSearch" layoutX="231.0" prefHeight="60.0" prefWidth="438.0">
+                           <children>
+                              <Label fx:id="valMsg" layoutX="19.0" layoutY="3.0" text="Label" visible="false" />
+                              <TextField fx:id="search" focusTraversable="false" layoutX="19.0" layoutY="20.0" onKeyReleased="#searchArticle" prefHeight="35.0" prefWidth="400.0" promptText="Search by Serial number" style="-fx-background-radius: 0;">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#a4a4a4" height="20.0" radius="9.5" spread="0.2" width="20.0" />
+                                 </effect>
+                              </TextField>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="article" layoutY="70.0" prefHeight="277.0" prefWidth="900.0" styleClass="back1" stylesheets="@../../login/sample.css">
+                           <children>
+                              <ImageView fx:id="img" fitHeight="171.0" fitWidth="199.0" layoutX="14.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Picture_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="serialNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="241.0" prefHeight="30.0" prefWidth="171.0" style="-fx-border-color: #04007f;" text="XXXXXXXX" textAlignment="CENTER" textFill="#970000">
+                                 <font>
+                                    <Font name="Tahoma" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="243.0" layoutY="59.0" prefHeight="30.0" prefWidth="110.0" text="Manufactury">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="243.0" layoutY="93.0" prefHeight="30.0" prefWidth="110.0" text="Model name">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="243.0" layoutY="125.0" prefHeight="30.0" prefWidth="110.0" text="feature 3">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="243.0" layoutY="158.0" prefHeight="30.0" prefWidth="110.0" text="feature 4">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="243.0" layoutY="191.0" prefHeight="30.0" prefWidth="110.0" text="feature 5">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="manufactury" layoutX="353.0" layoutY="59.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="modelName" layoutX="353.0" layoutY="92.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="353.0" layoutY="126.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="353.0" layoutY="159.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="353.0" layoutY="192.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="473.0" layoutY="60.0" prefHeight="30.0" prefWidth="110.0" text="feature 6">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="473.0" layoutY="93.0" prefHeight="30.0" prefWidth="110.0" text="feature 7">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="473.0" layoutY="126.0" prefHeight="30.0" prefWidth="110.0" text="feature 8">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="473.0" layoutY="159.0" prefHeight="30.0" prefWidth="110.0" text="feature 9">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="473.0" layoutY="192.0" prefHeight="30.0" prefWidth="110.0" text="feature 10">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="583.0" layoutY="60.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="583.0" layoutY="93.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="583.0" layoutY="126.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="583.0" layoutY="159.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="583.0" layoutY="192.0" prefHeight="30.0" prefWidth="110.0" text="null">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton focusTraversable="false" layoutX="676.0" layoutY="241.0" onAction="#information2" opacity="0.6" prefHeight="30.0" prefWidth="100.0" ripplerFill="#096800" style="-fx-border-color: #086400;" styleClass="btnArticle" stylesheets="@home.css" text="Sell" textFill="#086400">
+                                 <font>
+                                    <Font name="Tahoma" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </JFXButton>
+                              <JFXButton fx:id="btnAddBill" defaultButton="true" disable="true" focusTraversable="false" layoutX="786.0" layoutY="241.0" onAction="#billPreview" opacity="0.6" prefHeight="30.0" prefWidth="100.0" ripplerFill="#02007db6" style="-fx-border-color: #04007f;" styleClass="btnArticle" stylesheets="@home.css" text="Add to bill" textFill="#04007f">
+                                 <font>
+                                    <Font name="Tahoma" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </JFXButton>
+                              <Label fx:id="catName" alignment="CENTER" contentDisplay="CENTER" layoutX="274.0" prefHeight="36.0" prefWidth="352.0" text="Category name" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Geo" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="price" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="186.0" layoutY="241.0" prefHeight="30.0" prefWidth="146.0" style="-fx-border-color: #04007f; -fx-background-color: #00004c;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="241.0" prefHeight="30.0" prefWidth="60.0" style="-fx-border-color: #04007f;" text="F CFA" textAlignment="CENTER" textFill="#010053">
+                                 <font>
+                                    <Font name="Tahoma" size="20.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton focusTraversable="false" layoutX="566.0" layoutY="241.0" opacity="0.6" prefHeight="30.0" prefWidth="100.0" ripplerFill="#393939" style="-fx-border-color: #393939;" styleClass="btnArticle" stylesheets="@home.css" text="Cancel" textFill="#393939">
+                                 <font>
+                                    <Font name="Tahoma" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </JFXButton>
+                              <Label fx:id="lblDiscount" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="158.0" layoutY="50.0" minHeight="42.0" minWidth="42.0" rotate="20.0" style="-fx-background-color: white;" styleClass="numDiscount" stylesheets="@home.css" text="-20%" textFill="RED" visible="false">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#ff000099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <Pane layoutX="726.0" layoutY="64.0" prefHeight="150.0" prefWidth="160.0" style="-fx-border-color: DarkGray;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="1.0" prefHeight="24.0" prefWidth="160.0" style="-fx-background-color: DarkGray;" text="Promotion" textAlignment="CENTER" wrapText="true">
+                                       <font>
+                                          <Font name="Quicksand-Regular" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="7.0" layoutY="42.0" text="X">
+                                       <font>
+                                          <Font name="Quicksand-Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="qtyRefund0" layoutX="21.0" layoutY="37.0" text="1">
+                                       <font>
+                                          <Font name="Quicksand-Regular" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="53.0" layoutY="37.0" text="=">
+                                       <font>
+                                          <Font name="Quicksand-Regular" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Refund0" layoutX="75.0" layoutY="37.0" prefHeight="30.0" text="0%">
+                                       <font>
+                                          <Font name="Quicksand-Regular" size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="billPreviewPane" layoutX="-1035.0" layoutY="389.0" prefHeight="138.0" prefWidth="1023.0" style="-fx-border-color: DarkGray;" AnchorPane.leftAnchor="-1035.0" AnchorPane.rightAnchor="1207.0">
+                     <children>
+                        <Pane layoutX="1.0" layoutY="1.0" prefHeight="136.0" prefWidth="567.0" style="-fx-background-color: E9E9E9;">
+                           <children>
+                              <ImageView fx:id="img1" fitHeight="50.0" fitWidth="50.0" layoutX="19.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Laptop_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl1" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="29.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img3" fitHeight="50.0" fitWidth="50.0" layoutX="139.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Workstation_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl2" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="89.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img4" fitHeight="50.0" fitWidth="50.0" layoutX="199.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Monitor_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl3" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="149.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img5" fitHeight="50.0" fitWidth="50.0" layoutX="259.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Server_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl4" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="209.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img6" fitHeight="50.0" fitWidth="50.0" layoutX="319.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Keyboard_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl5" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="269.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img7" disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="379.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Mouse_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl6" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="329.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img2" fitHeight="50.0" fitWidth="50.0" layoutX="79.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Android_Tablet_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl7" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="389.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img8" fitHeight="50.0" fitWidth="50.0" layoutX="439.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Print_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl8" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="449.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="img9" fitHeight="50.0" fitWidth="50.0" layoutX="499.0" layoutY="46.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/icons8_Circuit_96px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lbl9" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="509.0" layoutY="95.0" opacity="0.4" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: DarkGray;" styleClass="num" stylesheets="@home.css" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+                                 </effect>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="566.0" layoutY="1.0" prefHeight="136.0" prefWidth="457.0" styleClass="panelFullView" stylesheets="@home.css">
+                           <children>
+                              <JFXButton fx:id="btnFullView" layoutX="350.0" layoutY="91.0" onAction="#Billed" prefHeight="25.0" prefWidth="100.0" styleClass="btnFullView" stylesheets="@home.css" text="Full View">
+                                 <font>
+                                    <Font name="Tahoma" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <ComboBox fx:id="cbCustomer" layoutX="11.0" layoutY="92.0" prefHeight="30.0" prefWidth="171.0" promptText="Customer" styleClass="cusSelect" stylesheets="@home.css" />
+                              <TextField fx:id="amountPaid" alignment="CENTER_RIGHT" layoutX="287.0" layoutY="15.0" prefHeight="32.0" prefWidth="160.0" promptText="Amount Paid" style="-fx-background-radius: 0; -fx-border-color: DarkGray;">
+                                 <font>
+                                    <Font name="Tahoma" size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="lbl10" alignment="CENTER" contentDisplay="CENTER" layoutX="227.0" layoutY="15.0" prefHeight="34.0" prefWidth="61.0" style="-fx-border-color: DarkGray; -fx-background-color: DarkGray;" text="F CFA">
+                                 <font>
+                                    <Font name="Tahoma" size="19.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </Label>
+                              <ComboBox fx:id="cbTransport" layoutX="193.0" layoutY="92.0" onAction="#billPreviewTransport" prefHeight="30.0" prefWidth="146.0" styleClass="cusSelect" stylesheets="@home.css" />
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0" layoutX="88.0" layoutY="55.0" onAction="#addCustPane" prefHeight="35.0" prefWidth="94.0" ripplerFill="#127500" style="-fx-background-radius: 0;" styleClass="btnAddCust1" stylesheets="@home.css" text="NEW" textFill="#0d5b03">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/icons8_Add_User_Male_32px_1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="326.0" style="-fx-border-color: DarkGray;" text="Bill preview">
+                           <font>
+                              <Font name="Geo" size="32.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="484.0" layoutY="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="37.0" prefWidth="60.0" style="-fx-border-color: DarkGray; -fx-background-color: DarkGray;" text="00">
+                           <font>
+                              <Font name="Geo" size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalPreview" alignment="CENTER_RIGHT" layoutX="544.0" prefHeight="36.0" prefWidth="158.0" style="-fx-border-color: DarkGray;" text="0" textFill="#3b2d63">
+                           <font>
+                              <Font name="Geo" size="32.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <Pane fx:id="header" focusTraversable="true" layoutY="25.0" prefHeight="89.0" prefWidth="1200.0" style="-fx-background-color: #8C8C8C;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="btnArt" layoutX="193.0" layoutY="53.0" onAction="#AllLoadArticles" prefHeight="36.0" prefWidth="100.0" ripplerFill="#0a002f" style="-fx-border-radius: 0; -fx-background-radius: 0;" styleClass="btnMenu" stylesheets="@home.css" text="Articles" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCus" layoutX="293.0" layoutY="53.0" onAction="#AllLoadCustomers" prefHeight="36.0" prefWidth="100.0" ripplerFill="#0a002f" style="-fx-border-radius: 0; -fx-background-radius: 0;" styleClass="btnMenu" stylesheets="@home.css" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnBil" layoutX="393.0" layoutY="53.0" onAction="#AllLoadBills" prefHeight="36.0" prefWidth="100.0" ripplerFill="#0a002f" style="-fx-border-radius: 0; -fx-background-radius: 0;" styleClass="btnMenu" stylesheets="@home.css" text="Bill" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1092.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Shutdown_32px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1092.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" styleClass="btnLogOut">
+                     <image>
+                        <Image url="@../../../images/icons8_Shutdown_32px_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1041.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Notification_96px%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1041.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" styleClass="btnLogOut">
+                     <image>
+                        <Image url="@../../../images/icons8_Notification_32px_3.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnBal" layoutX="493.0" layoutY="53.0" onAction="#BalanceSheet" prefHeight="36.0" prefWidth="100.0" ripplerFill="#0a002f" style="-fx-border-radius: 0; -fx-background-radius: 0;" styleClass="btnMenu" stylesheets="@home.css" text="Balance" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="593.0" layoutY="53.0" onAction="#aboutUs" prefHeight="36.0" prefWidth="100.0" ripplerFill="#0a002f" style="-fx-border-radius: 0; -fx-background-radius: 0;" styleClass="btnMenu" stylesheets="@home.css" text="About" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="71.0" layoutY="52.0" onAction="#home" prefHeight="36.0" prefWidth="110.0" ripplerFill="#0a002f" style="-fx-border-radius: 0; -fx-background-radius: 0;" styleClass="btnMenu" stylesheets="@home.css" text="   Home" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8_Home_96px%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="tagPane" arcHeight="3.0" arcWidth="3.0" fill="#3c3c3c" height="3.0" layoutX="71.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="110.0" />
+               </children></Pane>
+            <Pane layoutY="670.0" prefHeight="30.0" prefWidth="1200.0" styleClass="footer" stylesheets="@home.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <effect>
+                  <DropShadow color="#40404099" height="10.0" radius="4.5" width="10.0" />
+               </effect>
+               <children>
+                  <Label fx:id="fullDate" layoutX="1007.0" layoutY="6.0" prefHeight="20.0" prefWidth="182.0" text="Monday 25, january 2020" textFill="#ffffc2">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="hour" alignment="CENTER_RIGHT" layoutX="887.0" layoutY="6.0" prefHeight="20.0" prefWidth="104.0" text="19:02 pm" textAlignment="RIGHT" textFill="#ffa4fc">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="footerUserName" layoutX="40.0" layoutY="6.0" text="ELOKON EYIDI Pascal" textFill="#e4ff70">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../imgPerson/icons8_Male_User_32px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="footerStoreLocation" layoutX="260.0" layoutY="6.0" text="Dla, Logbessou" textFill="#e4ff70">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="234.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Home_Address_32px.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="rootPane1" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Pane fx:id="Bill" layoutX="313.0" layoutY="7.0" prefHeight="634.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: black;">
+               <children>
+                  <ImageView fitHeight="643.0" fitWidth="540.0" layoutX="23.0" layoutY="3.0" opacity="0.07" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/44817-tattoo-wiring-diagram-electrical-printed-circuit-electronics.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="441.0" layoutY="111.0" prefHeight="17.0" prefWidth="110.0" text="TOTAL">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billTotal1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="399.0" layoutY="128.0" prefHeight="30.0" prefWidth="153.0" style="-fx-border-color: DarkGray;" text="0000000000" textFill="#00aa00">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="3.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="352.0" layoutY="128.0" prefHeight="30.0" style="-fx-background-color: DarkGray; -fx-border-color: DarkGray;" text="F CFA">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="3.0" right="3.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="305.0" layoutY="397.0" text="Subtotal" underline="true">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billSubTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="410.0" layoutY="397.0" prefHeight="19.0" prefWidth="122.0" text="2000000000" textAlignment="RIGHT" textFill="#3200ff">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="305.0" layoutY="420.0" text="Discount">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billDiscountValue" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="422.0" layoutY="420.0" prefHeight="18.0" prefWidth="110.0" text="1600000000" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billDiscount" layoutX="369.0" layoutY="419.0" style="-fx-border-color: gray;" text="20%" textFill="#8d0000">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <JFXButton layoutX="432.0" layoutY="574.0" onAction="#createBill" prefHeight="24.0" prefWidth="100.0" ripplerFill="#00ff1a" style="-fx-border-color: black;" text="Sell">
+                     <font>
+                        <Font name="Tahoma" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="billOff" layoutX="310.0" layoutY="574.0" onAction="#cancelBill" prefHeight="10.0" prefWidth="100.0" ripplerFill="#7c7c7c" style="-fx-border-color: black;" text="Cancel">
+                     <font>
+                        <Font name="Tahoma" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <Line endX="557.0" endY="254.0" layoutY="285.0" startX="18.0" startY="254.0" stroke="#979797" />
+                  <Label layoutX="305.0" layoutY="445.0" text="Refund">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billRefund" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="422.0" layoutY="445.0" prefHeight="18.0" prefWidth="110.0" text="400000000" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="369.0" layoutY="444.0" style="-fx-border-color: gray;" text="20%" textFill="#8d0000">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="305.0" layoutY="467.0" text="Transport">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billTransport" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="422.0" layoutY="467.0" prefHeight="18.0" prefWidth="110.0" text="400000000" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="543.0" text="Amount paid">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billPaid" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="131.0" layoutY="543.0" prefHeight="18.0" prefWidth="110.0" text="000000000" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="305.0" layoutY="515.0" text="TOTAL" underline="true">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billTotal2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="410.0" layoutY="515.0" prefHeight="19.0" prefWidth="122.0" text="0000000000" textAlignment="RIGHT" textFill="#4d8a45">
+                     <font>
+                        <Font name="Tahoma Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="557.0" endY="254.0" layoutX="-1.0" layoutY="257.0" opacity="0.5" startX="18.0" startY="254.0" stroke="#979797" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="3.0" prefHeight="36.0" prefWidth="160.0" text="BILL" textFill="#2800ab">
+                     <font>
+                        <Font name="Geo" size="40.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" color="#979797" height="4.0" offsetX="2.0" offsetY="1.0" radius="1.5" width="4.0" />
+                     </effect>
+                  </Label>
+                  <Label layoutX="305.0" layoutY="489.0" text="TVA">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billTVAValue" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="422.0" layoutY="489.0" prefHeight="18.0" prefWidth="110.0" text="400000000" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billTVA" layoutX="369.0" layoutY="488.0" style="-fx-border-color: gray;" text="19.6%" textFill="#8d0000">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <TableView fx:id="articlesTable" layoutX="24.0" layoutY="208.0" prefHeight="187.0" prefWidth="526.0">
+                    <columns>
+                      <TableColumn fx:id="serialNumberCol" prefWidth="119.0" resizable="false" text="Serial Number" />
+                      <TableColumn fx:id="articleNamesCol" prefWidth="262.0" resizable="false" text="Article Names" />
+                        <TableColumn fx:id="priceCol" prefWidth="143.0" resizable="false" text="Price" />
+                    </columns>
+                  </TableView>
+                  <Line endX="557.0" endY="254.0" layoutY="-45.0" startX="18.0" startY="254.0" stroke="#cdcdcd" />
+                  <Line endX="557.0" endY="254.0" layoutY="141.0" opacity="0.5" startX="18.0" startY="254.0" stroke="#979797" />
+                  <Label layoutX="305.0" layoutY="543.0" text="Balance">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="billBalance" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="423.0" layoutY="543.0" prefHeight="18.0" prefWidth="110.0" text="00000" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="193.0" layoutX="20.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/icons8_Best_Seller_96px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="20.0" layoutY="111.0" text="Billed To">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="139.0" layoutY="111.0" text="Date of Issue">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="139.0" layoutY="153.0" text="bill Number">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="247.0" layoutY="110.0" text="By">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="storeName" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="390.0" layoutY="23.0" prefHeight="18.0" prefWidth="160.0" text="Store Name" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="storeAddress" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="359.0" layoutY="42.0" prefHeight="18.0" prefWidth="191.0" text="Store Address" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="storeNumber" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="368.0" layoutY="61.0" prefHeight="18.0" prefWidth="182.0" text="Store Phone Number" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="storeEmail" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="294.0" layoutY="80.0" prefHeight="18.0" prefWidth="256.0" text="Store Email" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sellingDate" layoutX="139.0" layoutY="130.0" text="25/06/2020" />
+                  <Label fx:id="billNumber" layoutX="139.0" layoutY="172.0" text="00000001" />
+                  <Label fx:id="cusFirstNames" layoutX="20.0" layoutY="130.0" text="ESSOH ESSOME" />
+                  <Label fx:id="cusLastName" layoutX="20.0" layoutY="148.0" text="Philippe" />
+                  <Label fx:id="cusNumber" layoutX="20.0" layoutY="165.0" text="699779977" />
+                  <Label fx:id="cusAddress" layoutX="20.0" layoutY="182.0" text="DLA Akwa" />
+                  <Label fx:id="empName" layoutX="247.0" layoutY="129.0" text="NDEDI Alex" />
+               </children>
+            </Pane>
+            <Pane fx:id="User" layoutX="322.0" layoutY="59.0" prefHeight="605.0" prefWidth="556.0" style="-fx-border-color: DarkGray; -fx-background-color: white;" visible="false">
+               <children>
+                  <JFXTextField fx:id="newCustFName" labelFloat="true" layoutX="32.0" layoutY="175.0" prefHeight="28.0" prefWidth="218.0" promptText="First name" unFocusColor="#222222">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="newCustLName" focusTraversable="false" labelFloat="true" layoutX="32.0" layoutY="227.0" prefHeight="28.0" prefWidth="218.0" promptText="Last Name" unFocusColor="#222222">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="newCustPhone" focusTraversable="false" labelFloat="true" layoutX="32.0" layoutY="278.0" prefHeight="28.0" prefWidth="218.0" promptText="Phone number" unFocusColor="#222222">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="newCustAddress" focusTraversable="false" labelFloat="true" layoutX="32.0" layoutY="330.0" prefHeight="28.0" prefWidth="218.0" promptText="Address" unFocusColor="#222222">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="newCustEmail" focusTraversable="false" labelFloat="true" layoutX="32.0" layoutY="382.0" prefHeight="28.0" prefWidth="218.0" promptText="Email" unFocusColor="#222222">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fx:id="newCustPicture0" fitHeight="210.0" fitWidth="210.0" layoutX="306.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../imgPerson/user-male-icon.png" />
+                     </image></ImageView>
+                  <Label layoutX="32.0" layoutY="429.0" text="Gender">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Group layoutX="20.0" layoutY="447.0">
+                     <children>
+                        <JFXRadioButton fx:id="newCustGenderM" focusTraversable="false" layoutX="12.0" layoutY="12.0" text="Male">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="gender" />
+                           </toggleGroup></JFXRadioButton>
+                        <JFXRadioButton fx:id="newCustGenderF" focusTraversable="false" layoutX="121.0" layoutY="12.0" text="Female" toggleGroup="$gender" />
+                     </children>
+                  </Group>
+                  <JFXButton fx:id="newCustPicture" graphicTextGap="1.0" layoutX="319.0" layoutY="420.0" onAction="#imgs" prefHeight="27.0" prefWidth="210.0" style="-fx-border-color: DarkGray;" textFill="#0b0032d9" underline="true" visible="false" />
+                  <JFXButton fx:id="newCustPictureV" graphicTextGap="1.0" layoutX="309.0" layoutY="410.0" onAction="#imgs" prefHeight="27.0" prefWidth="210.0" style="-fx-border-color: DarkGray;" text="Choose customer's picture" textFill="#0b0032d9" underline="true" />
+                  <JFXButton layoutX="406.0" layoutY="533.0" onAction="#addNewCustomer" prefHeight="34.0" prefWidth="110.0" style="-fx-border-color: #014900;" text="Add" textFill="#056500">
+                     <font>
+                        <Font name="Tahoma" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="286.0" layoutY="533.0" onAction="#cancelAddCustPane" prefHeight="34.0" prefWidth="110.0" style="-fx-border-color: #464646;" text="Cancel" textFill="#464646">
+                     <font>
+                        <Font name="Tahoma" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <Line endX="341.0" layoutX="157.0" layoutY="507.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="121.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="556.0">
+                     <fill>
+                        <LinearGradient endX="0.842857142857143" endY="0.9142857142857143" startX="0.8571428571428571" startY="0.14761904761904765">
+                           <stops>
+                              <Stop color="#d0d0d0" />
+                              <Stop color="#9e9e9e" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label layoutX="101.0" layoutY="76.0" text="NEW">
+                     <font>
+                        <Font name="BatmanForeverAlternate" size="30.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.5333333333333334" endY="0.06666666666666665" startX="0.5000000000000001" startY="0.7523809523809524">
+                           <stops>
+                              <Stop color="#190054" />
+                              <Stop color="#4b43b9" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label layoutX="183.0" layoutY="70.0" text="CUSTOMER" textFill="#0f057c">
+                     <font>
+                        <Font name="BatmanForeverOutline" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow color="#11004d" height="25.0" offsetX="1.0" offsetY="1.0" radius="12.0" width="25.0" />
+               </effect>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="rootPane2" prefHeight="200.0" prefWidth="200.0" visible="false" />
+   </children>
+</StackPane>

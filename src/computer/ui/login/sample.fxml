@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="729.0" styleClass="frame" stylesheets="@sample.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="computer.ui.login.Controller">
+   <children>
+      <AnchorPane fx:id="splashScreen" focusTraversable="true" layoutY="15.0" prefHeight="474.0" prefWidth="729.0" styleClass="back" stylesheets="@sample.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <effect>
+            <DropShadow height="10.0" radius="4.5" spread="0.2" width="10.0" />
+         </effect>
+         <children>
+            <Label layoutX="139.0" layoutY="87.0" text="NEWS" textFill="WHITE">
+               <font>
+                  <Font name="Geo" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="authentication" focusTraversable="true" layoutX="330.0" layoutY="6.0" prefHeight="493.0" prefWidth="379.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="20.0">
+         <children>
+            <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="83.0" layoutY="201.0" onKeyReleased="#emailValidator" onMouseClicked="#normalE" prefHeight="25.0" prefWidth="234.0" promptText="Email address">
+               <font>
+                  <Font name="Ebrima" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="83.0" layoutY="268.0" onMouseClicked="#normalP" prefHeight="31.0" prefWidth="234.0" promptText="Password">
+               <font>
+                  <Font name="Ebrima" size="15.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="btnsign" defaultButton="true" layoutX="217.0" layoutY="331.0" onAction="#signIn" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: #5a5a5a;" text="Sign in" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnsign1" layoutX="83.0" layoutY="331.0" onAction="#cancle" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: #5a5a5a;" text="Cancel" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="106.0" layoutY="65.0" prefHeight="55.0" prefWidth="125.0" text="LOG">
+               <font>
+                  <Font name="BatmanForeverAlternate" size="50.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.9285714285714286" endY="0.004761904761904762" startX="0.8809523809523809" startY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="225.0" layoutY="42.0" prefHeight="101.0" prefWidth="1.0" style="-fx-font-size: 100; -fx-font-family: BatmanForeverOutline;" text="I">
+               <font>
+                  <Font name="BatmanForeverAlternate" size="29.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.9285714285714286" endY="0.004761904761904762" startX="0.8809523809523809" startY="0.6619047619047619">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="247.0" layoutY="65.0" prefHeight="55.0" prefWidth="47.0" text="N">
+               <font>
+                  <Font name="BatmanForeverOutline" size="50.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.9190476190476191" endY="0.17142857142857143" startX="0.8761904761904762" startY="0.5714285714285714">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="29.0" layoutY="454.0" text="Contact the administrator if you don't know you're Password" />
+         </children>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" />
+         </effect>
+      </AnchorPane>
+      <Label fx:id="errorID" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="508.0" prefHeight="27.0" prefWidth="194.0" style="-fx-border-color: #aa0000; -fx-border-radius: 50;" text="Wrong email address or Passord" textAlignment="CENTER" textFill="#aa0000">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>

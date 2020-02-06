@@ -1,0 +1,15 @@
+.back{
+    -fx-background-color: linear-gradient(to right top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+    -fx-border-color: white;
+}
+.back1{
+    -fx-background-color: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.31));
+    -fx-background-radius: 2;
+}
+.btnDialog{
+    -fx-font-family: Tahoma;
+    -fx-border-color: #919191;
+    -fx-cursor: hand;
+    -fx-font-size: 12;
+    -fx-pref-width: 80;
+}

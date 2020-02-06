@@ -1,0 +1,85 @@
+.btnArticle:hover{
+    -fx-opacity: 1;
+    -fx-background-color: white;
+}
+
+.num{
+    -fx-background-radius: 50;
+    -fx-border-color: white;
+    -fx-border-radius: 50;
+    -fx-background-color: DarkGray;
+}
+
+.numDiscount{
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+
+.cusSelect{
+    -fx-background-color: none;
+    -fx-border-color: DarkGray;
+    -fx-font-family: Tahoma;
+    -fx-font-size: 14;
+}
+
+.cusSelect:hover{
+    -fx-border-color: rgba(55, 0, 0, 0.8);
+}
+
+.footer{
+    -fx-background-color: linear-gradient(to top right, #696969, #36383B, #696969);
+}
+
+.panelFullView{
+    -fx-background-color: linear-gradient(to right, E9E9E9, transparent);
+}
+
+.btnFullView{
+    -fx-background-color: #e1e1e1;
+    -fx-border-color: #030303;
+}
+
+.btnFullView:hover{
+    -fx-background-color: #c9c9c9;
+}
+
+.btnMenu:hover{
+    -fx-background-color: #7d7d7d;
+}
+
+.btnLogOut:hover{
+    visibility: hidden;
+}
+
+.userPic{
+    -fx-background-color: linear-gradient(to top, #5f5f5f, transparent);
+}
+
+.btnCust{
+    -fx-border-color: darkgray;
+}
+
+.btnAddCust1:hover{
+    -fx-content-display: LEFT;
+    -fx-border-color: rgba(155, 155, 155, 0.99);
+    -fx-background-color: white;
+}
+.btnAddCust:hover{
+    -fx-content-display: LEFT;
+    -fx-border-color: green;
+}
+
+.btnEditCust:hover{
+    -fx-content-display: LEFT;
+    -fx-border-color: #ff9900;
+}
+
+.btnDelCust:hover{
+    -fx-content-display: LEFT;
+    -fx-border-color: rgba(255, 9, 0, 0.91);
+}
+
+.btnPrintCust:hover{
+    -fx-content-display: LEFT;
+    -fx-border-color: rgba(1, 0, 228, 0.81);
+}
